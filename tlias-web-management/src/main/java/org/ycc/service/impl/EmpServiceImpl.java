@@ -4,13 +4,17 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.ycc.mapper.EmpExprMapper;
 import org.ycc.mapper.EmpMapper;
 import org.ycc.pojo.Emp;
+import org.ycc.pojo.EmpExpr;
 import org.ycc.pojo.EmpQueryParam;
 import org.ycc.pojo.PageResult;
 import org.ycc.service.EmpService;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -19,6 +23,9 @@ public class EmpServiceImpl implements EmpService {
 
     @Autowired
     private EmpMapper empMapper;
+
+    @Autowired
+    private EmpExprMapper empExprMapper;
 
     //-------------------原始分页查询---------------------
 //    @Override
@@ -33,8 +40,8 @@ public class EmpServiceImpl implements EmpService {
     /**
      * 基于pagehelper来实现
      *
-     * @param page
-     * @param pageSize
+     * @param
+     * @param
      * @return
      */
 
@@ -55,7 +62,6 @@ public class EmpServiceImpl implements EmpService {
 //        return new PageResult<Emp>(p.getTotal(), p.getResult());
 //
 //    }
-
     @Override
     public PageResult<Emp> page(EmpQueryParam empQueryParam) {
         //1.设置分页参数(pagehelper)
@@ -69,6 +75,28 @@ public class EmpServiceImpl implements EmpService {
         Page<Emp> p = (Page<Emp>) empList;
 
         return new PageResult<Emp>(p.getTotal(), p.getResult());
+
+    }
+
+    @Override
+    public void save(Emp emp) {
+
+        //补全基础信息
+        emp.setCreateTime(LocalDateTime.now());
+        emp.setUpdateTime(LocalDateTime.now());
+        //保存员工基础信息
+        empMapper.insert(emp);
+
+
+
+        // 添加员工工作经历
+        List<EmpExpr> exprList = emp.getExprList();
+        if (!CollectionUtils.isEmpty(exprList)){
+            exprList.forEach(empExpr -> {
+                empExpr.setEmpId(emp.getId());
+            });
+            empExprMapper.insertBatch(exprList);
+        }
 
     }
 }

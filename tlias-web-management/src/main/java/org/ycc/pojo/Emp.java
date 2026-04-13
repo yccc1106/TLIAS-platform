@@ -29,4 +29,7 @@ public class Emp {
 
     //封装部门名称
     private String deptName;
+
+    //封装员工经历
+    private List<EmpExpr> exprList;
 }

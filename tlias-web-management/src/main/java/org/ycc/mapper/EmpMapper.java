@@ -1,6 +1,8 @@
 package org.ycc.mapper;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.ycc.pojo.Emp;
 import org.ycc.pojo.EmpQueryParam;
@@ -40,4 +42,13 @@ public interface EmpMapper {
      * @return
      */
     List<Emp> list(EmpQueryParam empQueryParam);
+
+    /**
+     * 新增员工
+     * @param emp
+     */
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    @Insert("insert into emp(username, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time)" +
+            " values (#{username},#{name},#{gender},#{phone},#{job},#{salary},#{image},#{entryDate},#{deptId},#{createTime},#{updateTime})")
+    void insert(Emp emp);
 }
