@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/java/org/ycc/mapper/DeptMapper.java" value="f7b269f7-f82e-4e90-a7ed-0c08c6160c41" />
+    <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/java/org/ycc/mapper/EmpMapper.java" value="f7b269f7-f82e-4e90-a7ed-0c08c6160c41" />
+    <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/resources/mapper/EmpMapper.xml" value="f7b269f7-f82e-4e90-a7ed-0c08c6160c41" />
+  </component>
+</project>
