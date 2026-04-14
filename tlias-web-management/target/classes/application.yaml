@@ -19,3 +19,10 @@ mybatis:
     #指定XML映射配置文件的位置
   mapper-locations: classpath:mapper/*.xml
 
+
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: web-ai-ycc
+    region: cn-beijing
