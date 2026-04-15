@@ -13,6 +13,7 @@ import org.ycc.service.EmpLogService;
 import org.ycc.service.EmpService;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -106,6 +107,7 @@ public class EmpServiceImpl implements EmpService {
         }
 
     }
+
     @Transactional(rollbackFor = {Exception.class})
     @Override
     public void delete(List<Integer> ids) {
@@ -114,6 +116,31 @@ public class EmpServiceImpl implements EmpService {
 
         //2.批量删除员工工作经历信息
         empExprMapper.deleteByEmpId(ids);
+    }
+
+    @Override
+    public Emp getInfo(Integer id) {
+        return empMapper.getInfo(id);
+    }
+
+
+    @Transactional(rollbackFor = {Exception.class})
+    @Override
+    public void update(Emp emp) {
+        //1.根据ID修改员工的基本信息
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.updateById(emp);
+        //2.根据ID修改员工的工作经历信息
+        //2.1 先删除
+        empExprMapper.deleteByEmpId(Arrays.asList(emp.getId()));
+        //2.2 再添加
+        List<EmpExpr> exprList = emp.getExprList();
+        if (!CollectionUtils.isEmpty(exprList)) {
+            exprList.forEach(empExpr -> empExpr.setEmpId(emp.getId()));
+
+
+            empExprMapper.insertBatch(exprList);
+        }
     }
 
 }

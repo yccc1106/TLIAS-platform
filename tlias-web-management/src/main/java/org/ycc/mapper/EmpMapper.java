@@ -53,4 +53,13 @@ public interface EmpMapper {
     void insert(Emp emp);
 
     void deleteById(List<Integer> ids);
+
+    Emp getInfo(Integer id);
+
+    /**
+     * 根据id更新员工基本信息
+     *
+     * @param emp
+     */
+    void updateById(Emp emp);
 }
