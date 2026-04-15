@@ -1101,3 +1101,58 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:
 2026-04-15 19:55:04.393 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
 2026-04-15 19:55:04.398 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
 2026-04-15 19:55:04.404 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-04-15 20:07:14.158 [main] INFO  org.ycc.TliasWebManagementApplication-Starting TliasWebManagementApplication using Java 17.0.15 with PID 39009 (/Users/yuanchengle/code/web-project/tlias-web-management/target/classes started by yuanchengle in /Users/yuanchengle/code/web-project)
+2026-04-15 20:07:14.160 [main] INFO  org.ycc.TliasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2026-04-15 20:07:14.444 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-04-15 20:07:14.448 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-15 20:07:14.449 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-04-15 20:07:14.449 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-15 20:07:14.461 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-04-15 20:07:14.461 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 288 ms
+2026-04-15 20:07:14.652 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-04-15 20:07:14.656 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-04-15 20:07:14.660 [main] INFO  org.ycc.TliasWebManagementApplication-Started TliasWebManagementApplication in 0.625 seconds (process running for 0.853)
+2026-04-15 20:08:11.746 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-15 20:08:11.747 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-04-15 20:08:11.749 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-04-15 20:08:11.793 [http-nio-8080-exec-1] INFO  org.ycc.controller.ClazzsController-更新班级：Clazz(id=10, name=JavaEE就业166期, room=101, beginDate=2023-06-01, endDate=2024-01-25, masterId=7, subject=1, createTime=null, updateTime=null, masterName=null, status=null)
+2026-04-15 20:08:11.803 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-04-15 20:08:12.050 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a9282a0
+2026-04-15 20:08:12.051 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-04-15 20:09:12.927 [http-nio-8080-exec-4] INFO  org.ycc.controller.ClazzsController-更新班级：Clazz(id=10, name=JavaEE就业170期, room=101, beginDate=2023-06-01, endDate=2024-01-25, masterId=7, subject=1, createTime=null, updateTime=null, masterName=null, status=null)
+2026-04-15 20:10:01.202 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-15 20:10:03.214 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-04-15 20:10:03.221 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-04-15 20:10:03.226 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-04-15 20:10:04.654 [main] INFO  org.ycc.TliasWebManagementApplication-Starting TliasWebManagementApplication using Java 17.0.15 with PID 39136 (/Users/yuanchengle/code/web-project/tlias-web-management/target/classes started by yuanchengle in /Users/yuanchengle/code/web-project)
+2026-04-15 20:10:04.655 [main] INFO  org.ycc.TliasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2026-04-15 20:10:04.947 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-04-15 20:10:04.950 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-15 20:10:04.951 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-04-15 20:10:04.951 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-15 20:10:04.964 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-04-15 20:10:04.964 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 295 ms
+2026-04-15 20:10:05.170 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-04-15 20:10:05.175 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-04-15 20:10:05.179 [main] INFO  org.ycc.TliasWebManagementApplication-Started TliasWebManagementApplication in 0.638 seconds (process running for 0.85)
+2026-04-15 20:10:10.677 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-15 20:10:10.677 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-04-15 20:10:10.678 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-04-15 20:10:10.692 [http-nio-8080-exec-1] INFO  org.ycc.controller.ClazzsController-条件分页查询班级数据：ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2026-04-15 20:10:10.728 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-04-15 20:10:10.826 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16da94eb
+2026-04-15 20:10:10.827 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-04-15 20:10:12.000 [http-nio-8080-exec-4] INFO  org.ycc.controller.ClazzsController-查询班级：10
+2026-04-15 20:10:15.688 [http-nio-8080-exec-6] INFO  org.ycc.controller.ClazzsController-更新班级：Clazz(id=10, name=JavaEE就业170期, room=102, beginDate=2023-06-01, endDate=2024-01-25, masterId=7, subject=1, createTime=2026-04-15T20:09:13, updateTime=2026-04-15T20:09:13, masterName=null, status=null)
+2026-04-15 20:10:15.709 [http-nio-8080-exec-8] INFO  org.ycc.controller.ClazzsController-条件分页查询班级数据：ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2026-04-15 20:10:21.612 [http-nio-8080-exec-10] INFO  org.ycc.controller.ClazzsController-条件分页查询班级数据：ClazzQueryParam(page=1, pageSize=5, name=, begin=null, end=null)
+2026-04-15 20:10:23.524 [http-nio-8080-exec-1] INFO  org.ycc.controller.ClazzsController-查询班级：4
+2026-04-15 20:10:36.960 [http-nio-8080-exec-4] INFO  org.ycc.controller.ClazzsController-更新班级：Clazz(id=4, name=JavaEE就业166期, room=105, beginDate=2026-03-03, endDate=2029-02-16, masterId=20, subject=1, createTime=2024-06-01T17:46:10, updateTime=2024-06-01T17:46:10, masterName=null, status=null)
+2026-04-15 20:10:36.979 [http-nio-8080-exec-6] INFO  org.ycc.controller.ClazzsController-条件分页查询班级数据：ClazzQueryParam(page=1, pageSize=5, name=, begin=null, end=null)
+2026-04-15 20:10:51.653 [http-nio-8080-exec-8] INFO  org.ycc.controller.ClazzsController-查询班级：7
+2026-04-15 20:10:55.794 [http-nio-8080-exec-10] INFO  org.ycc.controller.ClazzsController-更新班级：Clazz(id=7, name=三角洲教学, room=200, beginDate=2026-04-15, endDate=2027-01-03, masterId=37, subject=2, createTime=2026-04-15T19:38:13, updateTime=2026-04-15T19:38:15, masterName=null, status=null)
+2026-04-15 20:10:55.815 [http-nio-8080-exec-1] INFO  org.ycc.controller.ClazzsController-条件分页查询班级数据：ClazzQueryParam(page=1, pageSize=5, name=, begin=null, end=null)
+2026-04-15 20:10:58.845 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-15 20:11:00.853 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-04-15 20:11:00.858 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-04-15 20:11:00.862 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.

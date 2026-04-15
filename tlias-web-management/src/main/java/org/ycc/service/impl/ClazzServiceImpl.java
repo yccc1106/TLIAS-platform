@@ -58,4 +58,14 @@ public class ClazzServiceImpl implements ClazzService {
         return clazzMapper.getClazz(id);
     }
 
+    @Override
+    public void update(Clazz clazz) {
+        //设置基础属性
+        clazz.setUpdateTime(LocalDateTime.now());
+
+        //调用mapper接口
+
+        clazzMapper.update(clazz);
+    }
+
 }

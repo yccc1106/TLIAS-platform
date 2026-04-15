@@ -46,4 +46,11 @@ public class ClazzsController {
         Clazz clazz = clazzService.getById(id);
         return Result.success(clazz);
     }
+
+    @PutMapping
+    public Result updateClazz(@RequestBody Clazz clazz) {
+        log.info("更新班级：{}", clazz);
+        clazzService.update(clazz);
+        return Result.success();
+    }
 }
