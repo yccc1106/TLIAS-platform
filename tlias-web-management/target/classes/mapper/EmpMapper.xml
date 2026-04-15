@@ -73,7 +73,7 @@
                  left join emp_expr ee on e.id = ee.emp_id
         where e.id = #{id}
     </select>
-<!--    统计员工职位人数-->
+    <!--    统计员工职位人数-->
     <select id="countEmpJobData" resultType="java.util.Map">
         select (case
                     when job = 1 then '班主任'
@@ -90,10 +90,10 @@
     </select>
     <!-- 统计员工的性别信息 -->
     <select id="countEmpGenderData" resultType="java.util.Map">
-        select
-            if(gender = 1, '男性员工', '女性员工') as name,
-            count(*) as value
-        from emp group by gender ;
+        select if(gender = 1, '男性员工', '女性员工') as name,
+               count(*)                               as value
+        from emp
+        group by gender;
     </select>
 
 

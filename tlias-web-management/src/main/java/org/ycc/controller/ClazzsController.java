@@ -2,11 +2,7 @@ package org.ycc.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.ycc.pojo.Clazz;
 import org.ycc.pojo.ClazzQueryParam;
 import org.ycc.pojo.PageResult;
@@ -35,5 +31,19 @@ public class ClazzsController {
         log.info("删除班级：{}", id);
         clazzService.delete(id);
         return Result.success();
+    }
+
+    @PostMapping
+    public Result saveClazz(@RequestBody Clazz clazz) {
+        log.info("添加班级数据：{}", clazz);
+        clazzService.insertClazz(clazz);
+        return Result.success();
+    }
+
+    @GetMapping("/{id}")
+    public Result getClazz(@PathVariable("id") Integer id) {
+        log.info("查询班级：{}", id);
+        Clazz clazz = clazzService.getById(id);
+        return Result.success(clazz);
     }
 }

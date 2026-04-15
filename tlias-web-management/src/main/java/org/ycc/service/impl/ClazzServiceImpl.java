@@ -10,6 +10,7 @@ import org.ycc.pojo.ClazzQueryParam;
 import org.ycc.pojo.PageResult;
 import org.ycc.service.ClazzService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -37,8 +38,24 @@ public class ClazzServiceImpl implements ClazzService {
 
     @Override
     public void delete(Integer id) {
+
         clazzMapper.delete(id);
     }
 
+    @Override
+    public void insertClazz(Clazz clazz) {
+
+        //设置基础属性
+        clazz.setCreateTime(LocalDateTime.now());
+        clazz.setUpdateTime(LocalDateTime.now());
+
+        //调用mapper接口
+        clazzMapper.insertClazz(clazz);
+    }
+
+    @Override
+    public Clazz getById(Integer id) {
+        return clazzMapper.getClazz(id);
+    }
 
 }
