@@ -137,8 +137,6 @@ public class EmpServiceImpl implements EmpService {
         List<EmpExpr> exprList = emp.getExprList();
         if (!CollectionUtils.isEmpty(exprList)) {
             exprList.forEach(empExpr -> empExpr.setEmpId(emp.getId()));
-
-
             empExprMapper.insertBatch(exprList);
         }
     }

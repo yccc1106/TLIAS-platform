@@ -57,7 +57,7 @@ public class DeptController {
     @DeleteMapping
     public Result delete(Integer id) {
 //        System.out.println("根据ID删除的部门" + id);
-        log.info("根据ID删除的部:{}",id);
+        log.info("根据ID删除的部门:{}", id);
         deptService.deleteById(id);
         return Result.success();
     }

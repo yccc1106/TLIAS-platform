@@ -1,14 +1,12 @@
 package org.ycc.mapper;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.ycc.pojo.Emp;
 import org.ycc.pojo.EmpQueryParam;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface EmpMapper {
@@ -62,4 +60,10 @@ public interface EmpMapper {
      * @param emp
      */
     void updateById(Emp emp);
+
+    @MapKey("pos")
+    List<Map<String, Object>> countEmpJobData();
+
+    @MapKey("name")
+    List<Map<String, Object>> countEmpGenderData();
 }
