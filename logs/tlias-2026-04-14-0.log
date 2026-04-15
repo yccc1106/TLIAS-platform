@@ -459,3 +459,5 @@ java.lang.NullPointerException: Cannot invoke "org.ycc.utils.AliyunOSSOperator.u
 2026-04-14 17:13:04.822 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
 2026-04-14 17:13:04.851 [http-nio-8080-exec-2] INFO  org.ycc.controller.uploadController-文件上传：jcole壁纸.jpg
 2026-04-14 17:13:06.811 [http-nio-8080-exec-2] INFO  org.ycc.controller.uploadController-url:https://web-ai-ycc.oss-cn-beijing.aliyuncs.com/2026/04/3417ce15-1ec8-4c8e-9ce2-448915ec1d25.jpg
+2026-04-14 17:14:00.997 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-14 17:14:03.009 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
