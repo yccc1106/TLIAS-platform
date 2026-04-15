@@ -9,6 +9,8 @@ import org.ycc.pojo.PageResult;
 import org.ycc.pojo.Result;
 import org.ycc.service.ClazzService;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/clazzs")
@@ -52,5 +54,12 @@ public class ClazzsController {
         log.info("更新班级：{}", clazz);
         clazzService.update(clazz);
         return Result.success();
+    }
+
+    @GetMapping("/list")
+    public Result list() {
+        log.info("查询所有班级");
+        List<Clazz> clazzList = clazzService.findAll();
+        return Result.success(clazzList);
     }
 }
