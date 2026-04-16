@@ -12,4 +12,6 @@ public interface StudentService {
      * @return
      */
     PageResult<Student> page(StudentQueryParam studentQueryParam);
+
+    void delete(Integer[] ids);
 }

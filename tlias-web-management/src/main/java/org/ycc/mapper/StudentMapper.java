@@ -17,4 +17,5 @@ public interface StudentMapper {
      */
     List<Student> list(StudentQueryParam studentQueryParam);
 
+    void delete(Integer[] ids);
 }

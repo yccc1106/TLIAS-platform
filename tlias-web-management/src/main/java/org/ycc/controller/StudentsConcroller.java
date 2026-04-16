@@ -2,9 +2,7 @@ package org.ycc.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.ycc.pojo.PageResult;
 import org.ycc.pojo.Result;
 import org.ycc.pojo.Student;
@@ -28,4 +26,10 @@ public class StudentsConcroller {
         return Result.success(pageResult);
     }
 
+    @DeleteMapping("/{ids}")
+    public Result delete(@PathVariable Integer[] ids) {
+        log.info("批量删除：{}", ids);
+        studentService.delete(ids);
+        return Result.success();
+    }
 }

@@ -30,4 +30,9 @@ public class StudentServiceImpl implements StudentService {
         Page<Student> p = (Page<Student>) studentList;
         return new PageResult<>(p.getTotal(), p.getResult());
     }
+
+    @Override
+    public void delete(Integer[] ids) {
+        studentMapper.delete(ids);
+    }
 }
