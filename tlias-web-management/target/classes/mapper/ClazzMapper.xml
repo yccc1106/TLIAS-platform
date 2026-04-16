@@ -25,5 +25,14 @@
         </where>
         order by c.update_time desc
     </select>
+    <select id="countStudentDegreeData" resultType="java.util.Map">
+        select
+        c.name as clazzName,
+        count(s.id) as studentCount
+        from clazz c
+        left join student s on c.id = s.clazz_id
+        group by c.id, c.name
+        order by studentCount desc
+    </select>
 
 </mapper>

@@ -66,4 +66,6 @@ public interface EmpMapper {
 
     @MapKey("name")
     List<Map<String, Object>> countEmpGenderData();
+
+    Long countByDeptId(Integer deptId);
 }

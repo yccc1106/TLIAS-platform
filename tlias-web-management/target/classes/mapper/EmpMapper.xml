@@ -96,6 +96,11 @@
         group by gender;
     </select>
 
+    <!-- 根据部门ID统计员工数量 -->
+    <select id="countByDeptId" resultType="java.lang.Long">
+        select count(*) from emp where dept_id = #{deptId}
+    </select>
+
 
     <!--根据ID更新员工信息-->
     <update id="updateById">

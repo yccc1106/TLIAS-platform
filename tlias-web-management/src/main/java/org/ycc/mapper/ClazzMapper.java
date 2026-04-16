@@ -5,6 +5,7 @@ import org.ycc.pojo.Clazz;
 import org.ycc.pojo.ClazzQueryParam;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ClazzMapper {
@@ -28,4 +29,6 @@ public interface ClazzMapper {
     @Update("update clazz set name = #{name},room = #{room},begin_date = #{beginDate}," +
             "end_date = #{endDate},master_id = #{masterId},subject = #{subject},update_time = #{updateTime} where id =#{id}")
     void update(Clazz clazz);
+
+    List<Map<String, Object>> countStudentDegreeData();
 }

@@ -9,12 +9,16 @@ import org.ycc.pojo.Result;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    //处理异常
-    @ExceptionHandler
-    public Result ex(Exception e) {//方法形参中指定能够处理的异常类型
-        e.printStackTrace();//打印堆栈中的异常信息
-        //捕获到异常之后，响应一个标准的Result
+    @ExceptionHandler(Exception.class)
+    public Result ex(Exception e) {
+        log.error("系统异常：", e);
         return Result.error("对不起,操作失败,请联系管理员");
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public Result handleRuntimeException(RuntimeException e) {
+        log.warn("业务异常：{}", e.getMessage());
+        return Result.error(e.getMessage());
     }
 
 }

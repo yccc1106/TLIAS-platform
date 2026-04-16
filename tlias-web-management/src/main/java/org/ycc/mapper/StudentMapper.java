@@ -5,6 +5,7 @@ import org.ycc.pojo.Student;
 import org.ycc.pojo.StudentQueryParam;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface StudentMapper {
@@ -26,4 +27,6 @@ public interface StudentMapper {
     void update(Student student);
 
     void updateScore(Integer id, Integer score);
+
+    List<Map<String, Object>> countStudentDegreeData();
 }

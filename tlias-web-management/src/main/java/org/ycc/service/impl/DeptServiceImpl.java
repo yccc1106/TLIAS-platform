@@ -3,6 +3,7 @@ package org.ycc.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.ycc.mapper.DeptMapper;
+import org.ycc.mapper.EmpMapper;
 import org.ycc.pojo.Dept;
 import org.ycc.service.DeptService;
 
@@ -15,6 +16,9 @@ public class DeptServiceImpl implements DeptService {
     @Autowired
     private DeptMapper deptMapper;
 
+    @Autowired
+    private EmpMapper empMapper;
+
     @Override
     public List<Dept> findAll() {
         return deptMapper.findAll();
@@ -22,6 +26,10 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     public void deleteById(Integer id) {
+        Long count = empMapper.countByDeptId(id);
+        if (count > 0) {
+            throw new RuntimeException("对不起，当前部门下有员工，不能直接删除！");
+        }
         deptMapper.deleteById(id);
     }
 
