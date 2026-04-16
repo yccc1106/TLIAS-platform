@@ -24,6 +24,12 @@
         </set>
         where id = #{id}
     </update>
+    <update id="updateScore">
+        update student
+        set violation_count = violation_count + 1,
+            violation_score = violation_score + #{score}
+        where id = #{id}
+    </update>
     <delete id="delete">
         delete from student where id in
         <foreach collection="ids" item="id" separator="," open="(" close=")">

@@ -65,4 +65,9 @@ public class StudentServiceImpl implements StudentService {
 
         studentMapper.update(student);
     }
+
+    @Override
+    public void updateScore(Integer id, Integer score) {
+        studentMapper.updateScore(id, score);
+    }
 }

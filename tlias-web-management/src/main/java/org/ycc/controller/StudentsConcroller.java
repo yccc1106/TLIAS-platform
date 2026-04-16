@@ -53,4 +53,11 @@ public class StudentsConcroller {
         studentService.update(student);
         return Result.success();
     }
+
+    @PutMapping("/violation/{id}/{score}")
+    public Result updateScore(@PathVariable Integer id, @PathVariable Integer score) {
+        log.info("更新学生id为{}的违纪分数为{}", id, score);
+        studentService.updateScore(id, score);
+        return Result.success();
+    }
 }

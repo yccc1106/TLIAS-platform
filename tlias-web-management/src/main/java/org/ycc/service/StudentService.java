@@ -20,4 +20,6 @@ public interface StudentService {
     Student getById(Integer id);
 
     void update(Student student);
+
+    void updateScore(Integer id, Integer score);
 }
