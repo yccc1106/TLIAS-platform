@@ -22,4 +22,6 @@ public interface StudentMapper {
     void add(Student student);
 
     Student getById(Integer id);
+
+    void update(Student student);
 }

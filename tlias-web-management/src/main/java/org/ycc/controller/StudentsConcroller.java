@@ -46,4 +46,11 @@ public class StudentsConcroller {
         Student student = studentService.getById(id);
         return Result.success(student);
     }
+
+    @PutMapping
+    public Result update(@RequestBody Student student) {
+        log.info("更新学生信息：{}", student);
+        studentService.update(student);
+        return Result.success();
+    }
 }
