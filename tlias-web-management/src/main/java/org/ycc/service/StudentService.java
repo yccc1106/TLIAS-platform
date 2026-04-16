@@ -14,4 +14,6 @@ public interface StudentService {
     PageResult<Student> page(StudentQueryParam studentQueryParam);
 
     void delete(Integer[] ids);
+
+    void add(Student student);
 }

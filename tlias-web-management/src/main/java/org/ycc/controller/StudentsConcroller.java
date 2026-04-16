@@ -32,4 +32,11 @@ public class StudentsConcroller {
         studentService.delete(ids);
         return Result.success();
     }
+
+    @PostMapping
+    public Result add(@RequestBody Student student) {
+        log.info("添加学生：{}", student);
+        studentService.add(student);
+        return Result.success();
+    }
 }

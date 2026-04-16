@@ -10,6 +10,7 @@ import org.ycc.pojo.Student;
 import org.ycc.pojo.StudentQueryParam;
 import org.ycc.service.StudentService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,5 +35,21 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void delete(Integer[] ids) {
         studentMapper.delete(ids);
+    }
+
+    @Override
+    public void add(Student student) {
+
+        student.setCreateTime(LocalDateTime.now());
+        student.setUpdateTime(LocalDateTime.now());
+
+        if (student.getViolationCount() == null) {
+            student.setViolationCount((short) 0);
+        }
+        if (student.getViolationScore() == null) {
+            student.setViolationScore((short) 0);
+        }
+
+        studentMapper.add(student);
     }
 }
