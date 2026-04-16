@@ -33,5 +33,11 @@
         </where>
         order by s.update_time desc
     </select>
+    <select id="getById" resultType="org.ycc.pojo.Student">
+        select s.*, c.name as clazzName
+        from student s
+                 left join clazz c on s.clazz_id = c.id
+        where s.id = #{id}
+    </select>
 
 </mapper>

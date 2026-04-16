@@ -39,4 +39,11 @@ public class StudentsConcroller {
         studentService.add(student);
         return Result.success();
     }
+
+    @GetMapping("/{id}")
+    public Result get(@PathVariable Integer id) {
+        log.info("查询id为{}的学生信息", id);
+        Student student = studentService.getById(id);
+        return Result.success(student);
+    }
 }

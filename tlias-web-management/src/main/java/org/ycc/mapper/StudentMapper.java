@@ -20,4 +20,6 @@ public interface StudentMapper {
     void delete(Integer[] ids);
 
     void add(Student student);
+
+    Student getById(Integer id);
 }

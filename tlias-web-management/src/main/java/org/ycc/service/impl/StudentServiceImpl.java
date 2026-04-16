@@ -52,4 +52,9 @@ public class StudentServiceImpl implements StudentService {
 
         studentMapper.add(student);
     }
+
+    @Override
+    public Student getById(Integer id) {
+        return studentMapper.getById(id);
+    }
 }
