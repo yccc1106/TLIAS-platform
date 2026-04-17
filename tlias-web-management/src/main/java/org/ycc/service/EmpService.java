@@ -2,6 +2,7 @@ package org.ycc.service;
 
 import org.ycc.pojo.Emp;
 import org.ycc.pojo.EmpQueryParam;
+import org.ycc.pojo.LoginInfo;
 import org.ycc.pojo.PageResult;
 
 import java.time.LocalDate;
@@ -20,4 +21,6 @@ public interface EmpService {
     Emp getInfo(Integer id);
 
     void update(Emp emp);
+
+    LoginInfo login(Emp emp);
 }

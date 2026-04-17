@@ -2,7 +2,9 @@ package org.ycc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
+@ServletComponentScan // 扫描Servlet、Filter、Listener
 @SpringBootApplication
 public class TliasWebManagementApplication {
 

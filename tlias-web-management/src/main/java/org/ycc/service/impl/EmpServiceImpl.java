@@ -2,6 +2,8 @@ package org.ycc.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import io.jsonwebtoken.Claims;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,12 +13,15 @@ import org.ycc.mapper.EmpMapper;
 import org.ycc.pojo.*;
 import org.ycc.service.EmpLogService;
 import org.ycc.service.EmpService;
+import org.ycc.utils.JwtUtils;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-
+@Slf4j
 @Service
 public class EmpServiceImpl implements EmpService {
 
@@ -140,5 +145,27 @@ public class EmpServiceImpl implements EmpService {
             empExprMapper.insertBatch(exprList);
         }
     }
+
+    @Override
+    public LoginInfo login(Emp emp) {
+
+        //1.根据用户名和密码查询
+        Emp e = empMapper.selectByUsernameAndPassword(emp);
+        //2.判断是否存在员工，如果存在，组装登录成功信息
+        if (e != null) {
+            log.info("员工登录成功：{}", e);
+            //生成JWT令牌
+            Map<String, Object> Claims = new HashMap<>();
+            Claims.put("id", e.getId());
+            Claims.put("username", e.getUsername());
+            String jwt = JwtUtils.generateJwt(Claims);
+            return new LoginInfo(e.getId(), e.getUsername(), e.getName(), jwt);
+
+        }
+        //3.不存在，返回登录失败信息
+        return null;
+    }
+
+
 
 }
