@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.ycc.pojo.Dept;
 import org.ycc.pojo.Result;
 import org.ycc.service.DeptService;
+import org.ycc.anno.Log;
 
 import java.util.List;
 
@@ -54,6 +55,7 @@ public class DeptController {
 
     //方法三：如果前端请求参数名与形参变量名相同，则可以省略@RequestParam，直接定义方法形参接受即可
     //推荐！！！
+    @Log
     @DeleteMapping
     public Result delete(Integer id) {
 //        System.out.println("根据ID删除的部门" + id);
@@ -68,6 +70,7 @@ public class DeptController {
      * @param dept
      * @return
      */
+    @Log
     @PostMapping
     public Result add(@RequestBody Dept dept) {
 //        System.out.println("新增部门" + dept);
@@ -101,6 +104,7 @@ public class DeptController {
      * @param dept
      * @return
      */
+    @Log
     @PutMapping
     public Result update(@RequestBody Dept dept){
 //        System.out.println("修改部门:"+ dept);

@@ -8,6 +8,7 @@ import org.ycc.pojo.Result;
 import org.ycc.pojo.Student;
 import org.ycc.pojo.StudentQueryParam;
 import org.ycc.service.StudentService;
+import org.ycc.anno.Log;
 
 @Slf4j
 @RestController
@@ -26,6 +27,7 @@ public class StudentsConcroller {
         return Result.success(pageResult);
     }
 
+    @Log
     @DeleteMapping("/{ids}")
     public Result delete(@PathVariable Integer[] ids) {
         log.info("批量删除：{}", ids);
@@ -33,6 +35,7 @@ public class StudentsConcroller {
         return Result.success();
     }
 
+    @Log
     @PostMapping
     public Result add(@RequestBody Student student) {
         log.info("添加学生：{}", student);
@@ -47,6 +50,7 @@ public class StudentsConcroller {
         return Result.success(student);
     }
 
+    @Log
     @PutMapping
     public Result update(@RequestBody Student student) {
         log.info("更新学生信息：{}", student);
@@ -54,6 +58,7 @@ public class StudentsConcroller {
         return Result.success();
     }
 
+    @Log
     @PutMapping("/violation/{id}/{score}")
     public Result updateScore(@PathVariable Integer id, @PathVariable Integer score) {
         log.info("更新学生id为{}的违纪分数为{}", id, score);

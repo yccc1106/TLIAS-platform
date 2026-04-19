@@ -8,6 +8,7 @@ import org.ycc.pojo.ClazzQueryParam;
 import org.ycc.pojo.PageResult;
 import org.ycc.pojo.Result;
 import org.ycc.service.ClazzService;
+import org.ycc.anno.Log;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class ClazzsController {
         return Result.success(pageResult);
     }
 
+    @Log
     @DeleteMapping("/{id}")
     public Result deleteClazz(@PathVariable("id") Integer id) {
         if (id == null) {
@@ -35,6 +37,7 @@ public class ClazzsController {
         return Result.success();
     }
 
+    @Log
     @PostMapping
     public Result saveClazz(@RequestBody Clazz clazz) {
         log.info("添加班级数据：{}", clazz);
@@ -49,6 +52,7 @@ public class ClazzsController {
         return Result.success(clazz);
     }
 
+    @Log
     @PutMapping
     public Result updateClazz(@RequestBody Clazz clazz) {
         log.info("更新班级：{}", clazz);

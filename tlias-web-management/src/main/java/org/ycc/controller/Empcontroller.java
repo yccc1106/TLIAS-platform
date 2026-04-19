@@ -8,6 +8,7 @@ import org.ycc.pojo.EmpQueryParam;
 import org.ycc.pojo.PageResult;
 import org.ycc.pojo.Result;
 import org.ycc.service.EmpService;
+import org.ycc.anno.Log;
 
 import java.util.Arrays;
 import java.util.List;
@@ -50,6 +51,7 @@ public class Empcontroller {
     /**
      * 新增员工
      */
+    @Log
     @PostMapping
     public Result save(@RequestBody Emp emp) {
         log.info("新增员工:{}", emp);
@@ -73,6 +75,7 @@ public class Empcontroller {
 //
 //    }
     //method2:以集合的形式
+    @Log
     @DeleteMapping
     public Result delete(@RequestParam List<Integer> ids) {
         log.info("删除员工：{}", ids);
@@ -89,6 +92,7 @@ public class Empcontroller {
 
     }
 
+    @Log
     @PutMapping
     public Result update(@RequestBody Emp emp) {
         log.info("更新员工信息：{}", emp);
