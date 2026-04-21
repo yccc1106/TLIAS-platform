@@ -9,7 +9,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
-@Component
+//@Component
 
 public class DemoInterceptor implements HandlerInterceptor {
     //在目标方法执行之前执行，返回值决定目标方法执行（true）还是不执行

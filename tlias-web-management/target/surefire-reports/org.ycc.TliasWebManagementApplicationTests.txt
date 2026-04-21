@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.ycc.TliasWebManagementApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 22.39 s <<< FAILURE! -- in org.ycc.TliasWebManagementApplicationTests
-org.ycc.TliasWebManagementApplicationTests.contextLoads -- Time elapsed: 21.31 s <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 22.64 s <<< FAILURE! -- in org.ycc.TliasWebManagementApplicationTests
+org.ycc.TliasWebManagementApplicationTests.contextLoads -- Time elapsed: 21.35 s <<< ERROR!
 java.lang.IllegalStateException: Could not initialize plugin: interface org.mockito.plugins.MockMaker (alternate: null)
 	at org.mockito.internal.configuration.plugins.PluginLoader$1.invoke(PluginLoader.java:85)
 	at jdk.proxy2/jdk.proxy2.$Proxy120.getHandler(Unknown Source)
